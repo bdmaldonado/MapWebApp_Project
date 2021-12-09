@@ -11,6 +11,9 @@
 	<!-- Ajax -->
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	
+	<!-- JS script for map api -->
+	<script src="history.js"></script>
+	
 	<title>BM Map Query Service</title>
   </head>
   <body>
@@ -49,7 +52,7 @@
 								</label>
 							<input type="number" class="form-control" id="numResults" />
 							</div>
-							<button on-click="fetch()" class="btn btn-primary">
+							<button onclick="fetch()" class="btn btn-primary">
 								Fetch History
 							</button>
 						</div>
@@ -58,7 +61,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<table class='table loadTable'>
-								<thead><tr><th>Date</th><th>Time</th><th>From</th><th>To</th><th># Maneuvers</th></tr></thead>
+								<thead><tr><th>Date</th><th>From</th><th>To</th><th># Maneuvers</th></tr></thead>
 								<tbody id='mapHistoryResult'>
 								</tbody>
 							</table>
@@ -69,11 +72,8 @@
 				<div class="col-md-6">
 					<div class="row">
 						<div class="col-md-6">
-							<img id="mapSatellite_History"><br>
-							<img id="mapElevation_History">
 						</div>
 						<div class="col-md-6">
-							<p id="mapInfo_History"></p>
 						</div>
 					</div>
 				</div>
