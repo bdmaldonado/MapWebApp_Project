@@ -60,6 +60,7 @@ function getElevationMap(from_coords, to_coords) {
 	// console.log(from_coords, to_coords);
 	json_from = JSON.parse(from_coords);
 	json_to = JSON.parse(to_coords);
+	console.log(json_from, json_to)
 	const elevationUrl = "http://open.mapquestapi.com/elevation/v1/chart?key=" + key + "&shapeFormat=raw&width=400&height=300&latLngCollection=";
 	// fetch api; https://stackoverflow.com/questions/47001306
 	const fetchUrl = elevationUrl + json_from.lat + "," + json_from.lng + "," + json_to.lat + "," + json_to.lng;
@@ -83,7 +84,7 @@ function displayResults(data) {
 								'Time: ' + cur.formattedTime + '<br>' +
 								cur.narrative + '<br>' +
 							    '</div>' +
-							    '</div>'); 
+							    '</div>') + '<br><br>'; 
 	}
 	
 	// fencepost for the last one bc it doesnt have a photo
