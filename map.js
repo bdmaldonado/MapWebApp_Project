@@ -96,15 +96,16 @@ function displayResults(data) {
 }
 
 function postToDatabase(directions) {
-	const dbUrl = "http://maldonbd.aws.csi.miamioh.edu/final.php?getLookup";
+	const dbUrl = "http://maldonbd.aws.csi.miamioh.edu/final.php?method=setLookup";
 	var numMan = encodeURIComponent(directions.route.legs[0].maneuvers.length);
-	var json = encodeURIComponent(directions); // encode JSON to a url
+	var json = {"obj":JSON.stringify(directions)}; // encode JSON for post
 	b = $.ajax({
-		url: dbUrl + "&from=" + from + "&to=" + to + "&numMan=" + 
+		url: dbUrl + "&start=" + from + "&end=" + to + "&numMan=" + 
 		     numMan,
 		method: "POST",
 		data:json
 	}).done(function(data) {
+		console.log(data)
 		console.log("success");
 	}).fail(function(error) {
 		console.log("error", error.statusText);
