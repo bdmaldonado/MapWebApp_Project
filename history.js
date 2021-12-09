@@ -1,7 +1,7 @@
 const key = "zzxX7xOQAnrYtGAa2zGfhQ09i9jLzv9f"
 var cachedData = [];
 
-function fetch() {
+function fillTable() {
 	const dbUrl = "http://maldonbd.aws.csi.miamioh.edu/final.php?method=getLookup";
 	date = encodeURIComponent($("#date").val()); 
 	n = encodeURIComponent($("#numResults").val());
@@ -55,7 +55,7 @@ function displayDirections(i) {
 							    '<div class="col-md-12">' +
 								'<h6>Arrived</h6>' +
 								cur.narrative + '<br>' +'</div>' +
-							    '</div>'); 
+							    '</div><br>'); 
 }
 
 // pings api to get location data

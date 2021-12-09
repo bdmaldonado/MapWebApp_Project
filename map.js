@@ -78,13 +78,13 @@ function displayResults(data) {
 		// console.log(cur);
 		// append this direction with its own row split by two columns
 		$('#directions').append('<div class="row">' + 
-							    '<div class="col-md-4"><img src=' + cur.mapUrl + '></div>' +
+							    '<div class="col-md-4"><img src=' + cur.mapUrl + '></div><br><br>' +
 							    '<div class="col-md-8">' +
 							    'Distance: ' + cur.distance + 'km<br>' +
 								'Time: ' + cur.formattedTime + '<br>' +
 								cur.narrative + '<br>' +
 							    '</div>' +
-							    '</div>') + '<br><br>'; 
+							    '</div><br><br>'); 
 	}
 	
 	// fencepost for the last one bc it doesnt have a photo
@@ -93,7 +93,7 @@ function displayResults(data) {
 							    '<div class="col-md-12">' +
 								'<h6>Arrived</h6>' +
 								cur.narrative + '<br>' +'</div>' +
-							    '</div>'); 
+							    '</div><br>'); 
 }
 
 function postToDatabase(directions) {
