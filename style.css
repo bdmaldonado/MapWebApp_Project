@@ -1,8 +1,10 @@
 tr:hover {
-	background: #81A8DE ;
+	background: #81A8DE;
+	font-weight: 700;
 }
 
 .border{
 	border: 1px solid;
 	border-color: black;
 }
+
