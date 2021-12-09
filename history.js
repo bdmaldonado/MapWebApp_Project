@@ -22,7 +22,7 @@ function displayResults(data) {
 	
 	for (var i = 0; i < data.result.length; i++) {
 		cachedData[i] = data.result[i];
-		$('#mapHistoryResult').append("<tr class='click' onclick='displayDirections(" + i + ")'><td>" 
+	$('#mapHistoryResult').append("<tr class='hoverable' onclick='displayDirections(" + i + ")'><td>" 
 		                                + data.result[i].date + "</td><td>" + data.result[i].start + "</td><td>" 
 										+ data.result[i].end + "</td><td>" + data.result[i].numMan + "</td></tr>");
 	}
@@ -112,3 +112,13 @@ function getElevationMap(from_coords, to_coords) {
 					document.getElementById('mapElevation').setAttribute('src', img);
 	})
 }
+
+// change class of the table
+// add hovered class
+// https://stackoverflow.com/questions/6836166/
+$('.hoverable').hover(function() {
+		$(this).addClass('hovered');
+		console.log("hovered!");
+	}, function() {
+		$(this).removeClass('hovered');
+});
