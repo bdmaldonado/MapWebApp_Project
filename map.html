@@ -11,6 +11,9 @@
 	<!-- Ajax -->
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	
+	<!-- JS script for map api -->
+	<script src="map.js"></script>
+	
 	<title>BM Map Query Service</title>
   </head>
   <body>
@@ -30,31 +33,35 @@
 			</ul>
 			
 			<!-- Map API -->
-			<div id="map" class="row">
-				<div class="col-md-4">
+			<div class="row">
+				<div class="col-md-6">
 					<div class="form-group">
 						<label for="starting">
 							Starting Location:
 						</label>
-						<input type="text" class="form-control" id="starting" />
+						<input type="text" class="form-control" id="from" />
 					</div>
 					<div class="form-group">
 						<label for="ending">
 							Destination:
 						</label>
-						<input type="text" class="form-control" id="ending" />
+						<input type="text" class="form-control" id="to" />
 					</div>
-					<button on-click="pingAPI()" class="btn btn-primary">
+					<br>
+					<button onclick="pingAPI()" class="btn btn-primary">
 						Get directions!
 					</button>
 				</div>
-				<div class="col-md-4">
-					<img id="mapSatellite"><br>
-					<img id="mapElevation">
+				<div id="elevation" class="col-md-6">
+					<p>Elevation change over course of trip</p>
+					<!-- start with blank white image -->
+					<img id="mapElevation" src="white_starter.png" alt="Graph of heights"  width="400px" height="300px">
 				</div>
-				<div class="col-md-4">
-					<p id="mapInfo"></p>
-				</div>
+			</div>
+			<div class="row">
+				<br><br>
+				<h4>Directions:</h4>
+				<div id="directions" class="col-md-12"></div>
 			</div>
 		</div>
 	</div>
